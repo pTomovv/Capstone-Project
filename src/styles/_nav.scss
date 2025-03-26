@@ -1,0 +1,12 @@
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    padding: 3% 5%;
+    img {
+        max-width: 10%;
+    }
+    .main-menu {
+        flex-grow: 1;
+    }
+}

@@ -1,0 +1,40 @@
+@use "variables";
+
+.main-menu {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    font-weight: bold;
+    font-size: 1.5rem;
+    .gallery {
+        position: relative;
+        .submenu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            list-style: none;
+            left: 0;
+        }
+    }
+
+    .gallery:hover .submenu {
+        display: block;
+        min-width: 150px;
+        padding: 0.1rem;
+    }
+
+    a {
+        color: variables.$secondary-color;
+
+        &:hover {
+            background-color: rgb(175, 194, 255);
+            text-decoration: underline;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .main-menu {
+        flex-direction: column;
+    }
+}
