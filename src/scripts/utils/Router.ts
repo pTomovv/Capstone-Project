@@ -61,6 +61,7 @@ export class Router {
                     this.currentPage.init();
                     break;
             }
+            window.scrollTo(0, 0);
         } catch (error) {
             console.error("Route error:", error);
             window.location.hash = "#missing";
