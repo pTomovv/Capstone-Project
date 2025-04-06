@@ -7,9 +7,12 @@
         "test": "echo \"Error: no test specified\" && exit 1",
         "compile:sass": "sass src/styles:dist/styles --no-source-map",
         "start-watching:sass": "sass --watch src/styles:dist/styles",
-        "build": "tsc && npm run compile:sass",
+        "build": "tsx src/scripts/utils/dataGenerator/generateData.ts && tsc && npm run compile:sass && cpx \"public/**/*\" dist",
         "lint": "eslint . && stylelint '**/*.scss'",
-        "generate-data": "ts-node src/scripts/generateData.ts"
+        "generate-data": "tsx src/scripts/utils/dataGenerator/generateData.ts",
+        "start-watching:ts": "tsc --watch",
+        "start": "live-server . --port=8080 --open=src/index.html",
+        "stop": "kill-port 8080"
     },
     "repository": {
         "type": "git",
@@ -18,18 +21,22 @@
     "keywords": [],
     "author": "",
     "license": "ISC",
-    "type": "commonjs",
+    "type": "module",
     "devDependencies": {
         "@eslint/js": "^9.23.0",
         "@types/node": "^22.13.13",
         "@typescript-eslint/eslint-plugin": "^8.28.0",
         "@typescript-eslint/parser": "^8.28.0",
+        "cpx": "^1.5.0",
         "eslint": "^9.23.0",
         "globals": "^16.0.0",
+        "kill-port": "^2.0.1",
+        "live-server": "^1.2.2",
         "sass": "^1.86.0",
         "stylelint": "^16.17.0",
         "stylelint-config-standard": "^37.0.0",
         "ts-node": "^10.9.2",
+        "tsx": "^4.19.3",
         "typescript": "^5.8.2",
         "typescript-eslint": "^8.28.0"
     }

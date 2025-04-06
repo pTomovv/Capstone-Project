@@ -13,29 +13,41 @@
     </head>
     <body>
         <header>
-            <nav>
+            <nav class="main-nav">
                 <img
-                    src="../public/images//house-apartment-logo-green-Transparent-1.png"
+                    src="../public/images/03e78caa-c708-45fe-8eea-ab9f2cf03cd3.png"
                     alt="logo"
                 />
 
-                <ul class="main-menu">
-                    <li><a href="index.html">Home</a></li>
-                    <li class="gallery">
-                        <a href="#">Gallery</a>
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="#home">Home</a></li>
+                    <li class="nav-item has-submenu">
+                        <a href="#gallery">Gallery</a>
                         <ul class="submenu">
-                            <li><a href="">All</a></li>
-                            <li><a href="">For Sale</a></li>
-                            <li><a href="">For Rent</a></li>
+                            <li><a href="#gallery?all">All</a></li>
+                            <li>
+                                <a href="#gallery?for-sale">For Sale</a>
+                            </li>
+                            <li>
+                                <a href="#gallery?for-rent">For Rent</a>
+                            </li>
                         </ul>
                     </li>
-                    <li><a href="contacts.html">Contacts</a></li>
+                    <li class="nav-item">
+                        <a href="#contacts">Contacts</a>
+                    </li>
                 </ul>
             </nav>
         </header>
         <main></main>
         <footer>
-            <p>&copy; 2025 Your Name</p>
+            <div class="footer-container">
+                <p>&copy; 2025 Golden Estate</p>
+                <p>+359 12 345 6789</p>
+                <p>info@goldenestate.com</p>
+            </div>
         </footer>
+
+        <script type="module" src="../dist/index.js"></script>
     </body>
 </html>

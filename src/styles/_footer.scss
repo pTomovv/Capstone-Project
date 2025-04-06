@@ -1,0 +1,14 @@
+@use "variables";
+footer {
+    .footer-container {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 10vh;
+        background-color: variables.$secondary-color;
+        p {
+            color: white;
+            padding: 0.5rem;
+        }
+    }
+}

@@ -4,6 +4,9 @@ body {
     font-family: "Courier New", Courier, monospace;
     background-color: variables.$primary-color;
 }
+main {
+    padding: 1rem;
+}
 a {
     text-decoration: none;
 }

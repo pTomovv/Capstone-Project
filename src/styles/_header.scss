@@ -1,0 +1,98 @@
+@use "variables";
+@use "sass:color";
+header {
+    background-color: rgb(98, 183, 252);
+    padding: 2rem;
+
+    .main-nav {
+        display: flex;
+        justify-content: space-between;
+        max-width: 1200px;
+        margin: 0 auto;
+        img {
+            max-width: 10%;
+        }
+
+        .nav-list {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            list-style: none;
+            gap: 2rem;
+            padding: 0;
+
+            .nav-item {
+                position: relative;
+
+                a {
+                    color: white;
+                    text-decoration: none;
+                    padding: 0.5rem 1rem;
+
+                    &:hover {
+                        color: variables.$secondary-color;
+                    }
+                }
+
+                &.has-submenu {
+                    .submenu {
+                        display: none;
+                        position: absolute;
+                        background-color: rgb(107, 142, 255);
+                        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+                        list-style: none;
+                        padding: 0;
+                        min-width: 135px;
+                        z-index: 20;
+
+                        li {
+                            padding: 0.5rem 0;
+
+                            &:hover {
+                                background-color: color.adjust(
+                                    variables.$primary-color,
+                                    $lightness: 40%
+                                );
+
+                                a {
+                                    color: variables.$secondary-color;
+                                }
+                            }
+                        }
+                    }
+
+                    &:hover .submenu {
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: variables.$tablet) {
+    header {
+        margin-bottom: 30px;
+    }
+    .nav-item {
+        a {
+            font-size: 1.2rem;
+        }
+    }
+}
+@media (max-width: 700px) {
+    header {
+        margin-bottom: 0px;
+    }
+    .nav-item {
+        a {
+            font-size: 1.1rem;
+        }
+    }
+}
+@media (min-width: variables.$tablet) {
+    .nav-item {
+        a {
+            font-size: 1.3rem;
+        }
+    }
+}
